@@ -17,6 +17,5 @@ void main() {
     channel.setMockMethodCallHandler(null);
   });
 
-  test('getPlatformVersion', () async {
-  });
+  test('getPlatformVersion', () async {});
 }

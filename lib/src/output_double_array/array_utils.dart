@@ -18,13 +18,12 @@ class ListUtils {
     return data;
   }
 
-
   static Future<List<String>> loadDic() async {
     final file = File(Directory.current.path + '/lib/src/dictionaly/dic.csv');
     final read = file.openRead();
 
     final lines =
-      await read.transform(utf8.decoder).transform(LineSplitter()).toList();
+        await read.transform(utf8.decoder).transform(LineSplitter()).toList();
     return lines;
   }
 }

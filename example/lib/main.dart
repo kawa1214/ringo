@@ -32,7 +32,6 @@ class _MyAppState extends State<MyApp> {
 
   Future _initRingo() async {
     _ringo = await Ringo.init();
-
   }
 
   void _controllerListener() {

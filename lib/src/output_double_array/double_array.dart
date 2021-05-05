@@ -97,8 +97,8 @@ class DoubleArray {
 
   final searchResult = <String>[];
   List<String> searchPrefix(String word) {
-    for(var start=0; start < word.length;start++) {
-      for (var end =1; end < word.length+1; end++) {
+    for (var start = 0; start < word.length; start++) {
+      for (var end = 1; end < word.length + 1; end++) {
         searchHelper(word, start, end);
       }
     }
@@ -111,7 +111,7 @@ class DoubleArray {
       return;
     }
     final query = word.substring(start, end);
-    if(search(query)) {
+    if (search(query)) {
       searchResult.add(query);
     }
   }

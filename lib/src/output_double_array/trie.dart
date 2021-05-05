@@ -11,7 +11,8 @@ String uint8ListToString(List<int> bytes) {
 }
 
 class Vocabulary {
-  Vocabulary({required this.word, required this.offset, required this.stopIndex});
+  Vocabulary(
+      {required this.word, required this.offset, required this.stopIndex});
   String word;
   int offset;
   int stopIndex;
@@ -93,7 +94,7 @@ class TrieTree {
   }
 
   void _getAllWordsWithPrefixHelper(
-      List<int>codes, TrieNode node, List<int> searched) {
+      List<int> codes, TrieNode node, List<int> searched) {
     if (codes.isEmpty) {
       searchResult = true;
       return;
