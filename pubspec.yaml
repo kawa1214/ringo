@@ -2,6 +2,7 @@ name: ringo
 description: Japanese MorphologicalAnalysis
 version: 0.0.1
 homepage: https://kawa.dev
+repository: https://github.com/kawa1214/ringo
 
 environment:
   sdk: ">=2.12.0-0 <3.0.0"
