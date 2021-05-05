@@ -15,7 +15,6 @@ class ListUtils {
   }
 
   static Future<List<int>> loadList(String path) async {
-    final file = File('packages/ringo/assets/$path');
     final text = await rootBundle.loadString('packages/ringo/assets/$path');//(await file.readAsLines()).first;
     final data = text.split(',').map((e) => int.tryParse(e) ?? 0).toList();
     return data;

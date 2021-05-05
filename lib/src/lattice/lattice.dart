@@ -22,7 +22,10 @@ main() async {
     );
   }).toList();
 
-  final doubleArray = SearchDoubleArray(base: base, check: check, );
+  final doubleArray = SearchDoubleArray(
+    base: base,
+    check: check,
+  );
   final lattice = Lattice(doubleArray: doubleArray, dic: wordDic);
   final result = lattice.searchPrefix('はなしたら元気になった');
   //result.forEach((e) {print(e.word.word);});
@@ -81,7 +84,8 @@ class Lattice {
     final query = word.substring(start, end);
     if (search(query)) {
       final words = searchWordsFromDic(query);
-      final results = words.map((e) => LatticeWord(start: start, end: end, word: e));
+      final results =
+          words.map((e) => LatticeWord(start: start, end: end, word: e));
       searchResult.addAll(results);
     }
   }
