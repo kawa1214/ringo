@@ -1,5 +1,5 @@
 name: ringo
-description: Japanese MorphologicalAnalysis
+description: Morphological analysis of Japanese sentences. This Flutter plugin helps you to analyze Japanese sentences.
 version: 0.0.1
 homepage: https://kawa.dev
 repository: https://github.com/kawa1214/ringo
@@ -17,10 +17,6 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-  plugin:
-    platforms:
-      some_platform:
-        pluginClass: ringoPlugin
   assets:
     - packages/ringo/assets/base.csv
     - packages/ringo/assets/check.csv
