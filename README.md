@@ -1,6 +1,7 @@
 # ringo
+![ringo](https://github.com/kawa1214/ringo/blob/main/example/ringo.gif "ringo")
 
-ringo is separating words in Japanese.
+ringo is japanese word separation.
 
 ## Usage
 ```
@@ -13,15 +14,14 @@ print('tokenized: $tokenized');
 
 ## ⚡️ Features
 
-- [x] Simple Separating words(only Japanese)
+- [x] Simple word separation(Japanese)
 - [x] Unknown word processing
-- [x] Use own dictionary(Create DoubleArray from TrieTree)
-- [x] Fast dictionary search(DoubleArray algorithm)
+- [x] Build own dictionary(Create DoubleArray from TrieTree)
+- [x] Fast dictionary search(DoubleArray Algorithm)
 
 ## Upcoming Features
 
-- [ ] Lattice Algorithm
-- [ ] MorphologicalAnalysis
+- [ ] MorphologicalAnalysis(Lattice Algorithm)
 
 ## Contributing
 
