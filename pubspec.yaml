@@ -19,7 +19,7 @@ flutter:
   plugin:
     platforms:
       some_platform:
-        pluginClass: somePluginClass
+        pluginClass: ringoPlugin
   assets:
     - packages/ringo/assets/base.csv
     - packages/ringo/assets/check.csv

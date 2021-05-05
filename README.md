@@ -1,7 +1,7 @@
 # ringo
 ![ringo](https://github.com/kawa1214/ringo/blob/main/example/ringo.gif "ringo")
 
-ringo is japanese word separation.
+ringo is japanese word separator.
 
 ## Usage
 ```
