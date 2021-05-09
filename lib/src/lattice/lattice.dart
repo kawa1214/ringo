@@ -1,37 +1,35 @@
-import 'dart:io';
-
+import 'package:ringo/src/data/tokenized_word.dart';
+import 'package:ringo/src/data/word.dart';
 import 'package:ringo/src/output_double_array/array_utils.dart';
 import 'package:ringo/src/output_double_array/trie.dart';
+import 'package:ringo/src/utils/path.dart';
 
-main() async {
-  final current = '/lib/src/output_double_array/outputs/';
-  final base =
-      await ListUtils.loadList(Directory.current.path + current + 'base.csv');
-  final check =
-      await ListUtils.loadList(Directory.current.path + current + 'check.csv');
-
-  final dic = await ListUtils.loadDic();
-
-  final wordDic = dic.map((e) {
-    final parts = e.split(',');
-    return Word(
-      word: parts[0],
-      leftContextId: int.tryParse(parts[1]) ?? 0,
-      rightContextId: int.tryParse(parts[2]) ?? 0,
-      occurrenceCost: int.tryParse(parts[3]) ?? 0,
-    );
-  }).toList();
-
-  final doubleArray = SearchDoubleArray(
-    base: base,
-    check: check,
-  );
-  final lattice = Lattice(doubleArray: doubleArray, dic: wordDic);
-  final result = lattice.searchPrefix('はなしたら元気になった');
-  //result.forEach((e) {print(e.word.word);});
-  print(result);
+class Node {
+  Node(this.word);
+  final TokenizedWord word;
+  final List<Node> nodes= [];
 }
 
+class Lattice {
+  Lattice(this.node);
+  final Node node;
+
+  static Lattice setWords(List<TokenizedWord> words) {
+    final node = bosNode();
+
+    
+
+    return Lattice(node);
+  }
+
+  static Node bosNode() {
+    return Node(
+      TokenizedWord(end: 0, start: 0, word: 'BOS'),
+    );
+  }
+}
+
+/*
 class Word {
   const Word(
       {required this.word,
@@ -105,3 +103,4 @@ class Lattice {
     return true;
   }
 }
+*/

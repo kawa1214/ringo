@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ringo/ringo.dart';
+//import 'package:ringo/ringo.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('ringo');

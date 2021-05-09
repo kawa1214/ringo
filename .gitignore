@@ -6,4 +6,5 @@
 
 build/
 
-lib/assets/dic.csv
+#lib/assets/dic.csv
+coverage/

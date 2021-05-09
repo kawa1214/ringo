@@ -20,3 +20,4 @@ flutter:
   assets:
     - packages/ringo/assets/base.csv
     - packages/ringo/assets/check.csv
+    - packages/ringo/assets/dic.csv

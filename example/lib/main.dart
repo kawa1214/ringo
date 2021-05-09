@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:ringo/ringo.dart';
 
 void main() {
@@ -24,23 +23,28 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     _initRingo();
     controller.addListener(_controllerListener);
-    //_ringo = await Ringo.init();
-
-    //final result = _ringo.tokenize('吾輩はRingoである');
-    //print(result);
   }
 
-  Future _initRingo() async {
+  Future _lattice() async {
+  
+  }
+
+  Future<void> _initRingo() async {
     _ringo = await Ringo.init();
+    _ringo.analyzeMorphologic('私は昨日ワインを飲んだ気がする');
   }
 
   void _controllerListener() {
     tokenized.clear();
+
+    // debug
+    _ringo.analyzeMorphologic('私は昨日ワインを飲んだ気がする');
+
     final words = _ringo.tokenize(controller.text);
     for (final word in words) {
       tokenized.write('$word\n');
-      setState(() {});
     }
+    setState(() {});
   }
 
   @override
