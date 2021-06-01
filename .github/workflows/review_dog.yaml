@@ -20,7 +20,9 @@ jobs:
       - uses: reviewdog/action-setup@v1
         with:
           reviewdog_version: latest
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: dartcop . | reviewdog -f=checkstyle -name=dartcop -reporter=github-pr-review
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test --verbose --coverage --coverage-path=~/coverage/lcov.info
-      - run: dartcop . | reviewdog -f=checkstyle -name=dartcop -reporter=github-pr-review
