@@ -20,6 +20,7 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test --verbose --coverage --coverage-path=~/coverage/lcov.info
+      - uses: reviewdog/action-setup@v1
         with:
           reviewdog_version: latest
       - run: dartcop . | reviewdog -f=checkstyle -name=dartcop -reporter=github-pr-review
