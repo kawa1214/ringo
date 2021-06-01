@@ -17,6 +17,9 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable"
+      - uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
       - run: flutter pub get
       - run: dartcop . | reviewdog -f=checkstyle -name=dartcop -reporter=github-pr-review
       - run: flutter analyze
