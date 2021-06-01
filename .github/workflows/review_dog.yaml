@@ -18,6 +18,6 @@ jobs:
         with:
           channel: "stable"
       - run: flutter pub get
+      - run: dartcop . | reviewdog -f=checkstyle -name=dartcop -reporter=github-pr-review
       - run: flutter analyze
       - run: flutter test --verbose --coverage --coverage-path=~/coverage/lcov.info
-      - run: dartcop . | reviewdog -f=checkstyle -name=dartcop -reporter=github-pr-
