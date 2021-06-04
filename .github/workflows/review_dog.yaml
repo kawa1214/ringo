@@ -1,26 +1,27 @@
-name: reviewdog
-on: [pull_request]
-jobs:
-  dartanalyzer:
-    name: Check Code Quality
-    runs-on: ubuntu-latest
+name: flutter_analyze_and_test
 
+on:
+  pull_request:
+
+jobs:
+  test:
+    name: flutter reviewdog
+    runs-on: ubuntu-latest
     steps:
-      - name: Clone repo
-        uses: actions/checkout@main
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
         with:
-          fetch-depth: 1
-      - name: Setup Dart SDK
-        uses: dart-lang/setup-dart@v1
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
         with:
-          sdk: stable
-      - name: Setup python
-        uses: actions/setup-python@v2
+          channel: "stable"
+      - uses: reviewdog/action-setup@v1
         with:
-          python-version: '3.x'
-          architecture: x64
-      - name: Run dartanalyzer
-        uses: HansChua/dartanalyzer-reviewdog-action@main
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review 
+          reviewdog_version: latest
+      - name: reviewdog
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: dartcop . | reviewdog -f=checkstyle -name=dartcop -reporter=github-pr-review
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test --verbose --coverage --coverage-path=~/coverage/lcov.info
