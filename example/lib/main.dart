@@ -25,9 +25,7 @@ class _MyAppState extends State<MyApp> {
     controller.addListener(_controllerListener);
   }
 
-  Future _lattice() async {
-  
-  }
+  Future _lattice() async {}
 
   Future<void> _initRingo() async {
     _ringo = await Ringo.init();
