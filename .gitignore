@@ -6,5 +6,12 @@
 
 build/
 
-#lib/assets/dic.csv
+
 coverage/
+lib/assets/dic.csv
+
+# example files
+example/android/
+example/ios/
+example/web/
+example/test/

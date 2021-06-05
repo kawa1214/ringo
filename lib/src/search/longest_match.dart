@@ -7,9 +7,7 @@ class LongestMatch {
     int current = 0;
     words.sort((a, b) => b.end.compareTo(a.end));
     final unknownWordBuffer = StringBuffer();
-    //print('query.length: ${query.length}');
     for (var i = 0; i < query.length && current < query.length; i++) {
-      //print(current);
       final startWords = words.where((e) => e.start == current).toList();
       if (startWords.isNotEmpty) {
         /// 未知語を追加

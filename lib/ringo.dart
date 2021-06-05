@@ -25,10 +25,18 @@ class Ringo {
     return longestMatchResult;
   }
 
+  /*
   void analyzeMorphologic(String query) {
+    final s = Stopwatch();
+    s.start();
+
     final words = _doubleArray.searchCommonPrefix(query);
     final allWords = _dictionary.allWordsFromTokenizedWords(words);
-    print(words.first.dicWords);
-    //print(allWords.length);
+    print('${s.elapsed.inMilliseconds}'); // Duration
+
+    allWords.forEach((element) {
+      print('${element.word}, ${element.dicWords.length}');
+    });
   }
+  */
 }

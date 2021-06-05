@@ -11,12 +11,13 @@ class Dictionary {
     return Dictionary(words);
   }
 
-  void allWordsFromTokenizedWords(List<TokenizedWord> tokenizedWords) {
+  List<TokenizedWord>  allWordsFromTokenizedWords(List<TokenizedWord> tokenizedWords) {
     for(final tokenizedWord in tokenizedWords) {
       final allWords = words.where((e) => e.word==tokenizedWord.word).toList();
       if (allWords.isNotEmpty){
         tokenizedWord.dicWords.addAll(allWords);
       }
     }
+    return tokenizedWords;
   }
 }

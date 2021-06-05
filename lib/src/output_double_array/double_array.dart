@@ -36,10 +36,6 @@ class DoubleArray {
       final next = offset + child.code;
       build(next, child);
     }
-
-    //print('current: $current');
-    //print('base: $base');
-    //print('base: $check');
   }
 
   bool acceptable(List<TrieNode> nodes, int offset) {

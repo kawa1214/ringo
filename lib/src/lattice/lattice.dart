@@ -11,21 +11,9 @@ class Node {
 }
 
 class Lattice {
-  Lattice(this.node);
-  final Node node;
 
-  static Lattice setWords(List<TokenizedWord> words) {
-    final node = bosNode();
-
+  void buildLattice() {
     
-
-    return Lattice(node);
-  }
-
-  static Node bosNode() {
-    return Node(
-      TokenizedWord(end: 0, start: 0, word: 'BOS'),
-    );
   }
 }
 

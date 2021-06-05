@@ -29,14 +29,11 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> _initRingo() async {
     _ringo = await Ringo.init();
-    _ringo.analyzeMorphologic('私は昨日ワインを飲んだ気がする');
+    final result = _ringo.tokenize('吾輩はRingoである');
+    print(result);
   }
 
   void _controllerListener() {
-    tokenized.clear();
-
-    // debug
-    _ringo.analyzeMorphologic('私は昨日ワインを飲んだ気がする');
 
     final words = _ringo.tokenize(controller.text);
     for (final word in words) {
